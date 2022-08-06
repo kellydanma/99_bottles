@@ -1,6 +1,17 @@
 class Bottles
+  def song
+    verses(99, 0)
+  end
+
   def verses(upper, lower)
-    verse(99) + "\n" + verse(98)
+    lyrics = ""
+
+    (upper).downto(lower + 1).each do |number_of_bottles|
+      lyrics += verse(number_of_bottles)
+      lyrics += "\n"
+    end
+    
+    lyrics += verse(lower)
   end
 
   def verse(number_of_bottles)
