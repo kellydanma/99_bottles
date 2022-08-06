@@ -2,6 +2,8 @@ class Bottles
 
   def verse(number_of_bottles)
     case number_of_bottles
+    when 0
+      lyrics_for_0_bottles
     when 1
       lyrics_for_1_bottle
     when 2
@@ -9,6 +11,13 @@ class Bottles
     else
       lyrics_for(number_of_bottles)
     end
+  end
+
+  def lyrics_for_0_bottles
+    "No more bottles of beer on the wall, " +
+    "no more bottles of beer.\n" +
+    "Go to the store and buy some more, " +
+    "99 bottles of beer on the wall.\n"
   end
 
   def lyrics_for_1_bottle
