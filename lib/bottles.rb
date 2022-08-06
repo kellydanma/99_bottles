@@ -6,7 +6,7 @@ class Bottles
   def verses(upper, lower)
     lyrics = ""
 
-    (upper).downto(lower + 1).each do |number_of_bottles|
+    (upper).downto(lower + 1) do |number_of_bottles|
       lyrics += verse(number_of_bottles)
       lyrics += "\n"
     end
