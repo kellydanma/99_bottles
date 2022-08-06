@@ -1,4 +1,7 @@
 class Bottles
+  def verses(upper, lower)
+    verse(99) + "\n" + verse(98)
+  end
 
   def verse(number_of_bottles)
     case number_of_bottles
