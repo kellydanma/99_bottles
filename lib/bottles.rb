@@ -43,11 +43,15 @@ class Bottles
     "#{number_of_bottles} bottles of beer on the wall, " +
     "#{number_of_bottles} bottles of beer.\n" +
     "Take one down and pass it around, #{number_of_bottles - 1} " +
-    if number_of_bottles > 2
+    container(number_of_bottles - 1) +
+    " of beer on the wall.\n"
+  end
+
+  def container(number_of_bottles)
+    if number_of_bottles > 1
       "bottles"
     else
       "bottle"
-    end +
-    " of beer on the wall.\n"
+    end
   end
 end
