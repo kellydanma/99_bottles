@@ -18,7 +18,7 @@ class Bottles
     "#{quantity(number_of_bottles).capitalize} #{container(number_of_bottles)} of beer on the wall, " +
     "#{quantity(number_of_bottles)} #{container(number_of_bottles)} of beer.\n" +
     action(number_of_bottles) +
-    "#{quantity(number_of_bottles - 1)} #{container(number_of_bottles - 1)} of beer on the wall.\n"
+    "#{quantity(successor(number_of_bottles))} #{container(successor(number_of_bottles))} of beer on the wall.\n"
   end
 
   def action(number_of_bottles = :FIXME)
@@ -29,9 +29,15 @@ class Bottles
     end
   end
 
-  def quantity(number_of_bottles)
-    number_of_bottles = number_of_bottles % 100
+  def successor(number_of_bottles)
+    if number_of_bottles == 0
+      99
+    else
+      number_of_bottles - 1
+    end
+  end
 
+  def quantity(number_of_bottles)
     if number_of_bottles > 0
       number_of_bottles.to_s
     else
