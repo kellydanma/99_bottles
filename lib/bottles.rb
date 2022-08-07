@@ -35,23 +35,38 @@ class Bottles
   def lyrics_for_1_bottle
     "1 bottle of beer on the wall, " +
     "1 bottle of beer.\n" +
-    "Take it down and pass it around, " +
-    "no more bottles of beer on the wall.\n"
+    "Take #{pronoun(1)} down and pass it around, " +
+    "#{quantity(0)} #{container(0)} of beer on the wall.\n"
   end
 
   def lyrics_for(number_of_bottles)
     "#{number_of_bottles} bottles of beer on the wall, " +
     "#{number_of_bottles} bottles of beer.\n" +
-    "Take one down and pass it around, #{number_of_bottles - 1} " +
-    container(number_of_bottles - 1) +
-    " of beer on the wall.\n"
+    "Take #{pronoun(number_of_bottles)} down and pass it around, " +
+    "#{quantity(number_of_bottles - 1)} #{container(number_of_bottles - 1)} of beer on the wall.\n"
+  end
+
+  def quantity(number_of_bottles)
+    if number_of_bottles > 0
+      number_of_bottles
+    else
+      "no more"
+    end
   end
 
   def container(number_of_bottles)
-    if number_of_bottles > 1
-      "bottles"
-    else
+    if number_of_bottles == 1
       "bottle"
+    else
+      "bottles"
+    end
+  end
+
+  def pronoun(number_of_bottles)
+    if number_of_bottles > 1
+      "one"
+    else
+      "it"
     end
   end
 end
