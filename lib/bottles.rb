@@ -6,22 +6,25 @@ class Bottles
   def verses(upper, lower)
     lyrics = ""
 
-    (upper).downto(lower + 1) do |number_of_bottles|
-      lyrics += verse(number_of_bottles)
+    (upper).downto(lower + 1) do |verse_number|
+      lyrics += verse(verse_number)
       lyrics += "\n"
     end
     
     lyrics += verse(lower)
   end
 
-  def verse(number_of_bottles)
+  def verse(verse_number)
+    number_of_bottles = verse_number
+    next_number_of_bottles = successor(number_of_bottles)
+
     "#{quantity(number_of_bottles).capitalize} #{container(number_of_bottles)} of beer on the wall, " +
     "#{quantity(number_of_bottles)} #{container(number_of_bottles)} of beer.\n" +
     action(number_of_bottles) +
-    "#{quantity(successor(number_of_bottles))} #{container(successor(number_of_bottles))} of beer on the wall.\n"
+    "#{quantity(next_number_of_bottles)} #{container(next_number_of_bottles)} of beer on the wall.\n"
   end
 
-  def action(number_of_bottles = :FIXME)
+  def action(number_of_bottles)
     if number_of_bottles == 0
       "Go to the store and buy some more, "
     else
