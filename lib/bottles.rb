@@ -69,10 +69,10 @@ class BottleNumber
   end
 
   def quantity(number_of_bottles = nil)
-    if number > 0
-      number.to_s
-    else
+    if number == 0
       "no more"
+    else
+      number.to_s
     end
   end
 
@@ -85,10 +85,10 @@ class BottleNumber
   end
 
   def pronoun(number_of_bottles = nil)
-    if number > 1
-      "one"
-    else
+    if number == 1
       "it"
+    else
+      "one"
     end
   end
 end
