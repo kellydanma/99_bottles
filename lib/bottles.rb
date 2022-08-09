@@ -25,45 +25,23 @@ class Bottles
   end
 
   def action(number_of_bottles)
-    if number_of_bottles == 0
-      "Go to the store and buy some more, "
-    else
-      "Take #{pronoun(number_of_bottles)} down and pass it around, "
-    end
+    BottleNumber.new(number_of_bottles).action(number_of_bottles)
   end
 
   def successor(number_of_bottles)
-    if number_of_bottles == 0
-      99
-    else
-      number_of_bottles - 1
-    end
+    BottleNumber.new(number_of_bottles).successor(number_of_bottles)
   end
 
   def quantity(number_of_bottles)
-    if number_of_bottles > 0
-      number_of_bottles.to_s
-    else
-      "no more"
-    end
-
     BottleNumber.new(number_of_bottles).quantity(number_of_bottles)
   end
 
   def container(number_of_bottles)
-    if number_of_bottles == 1
-      "bottle"
-    else
-      "bottles"
-    end
+    BottleNumber.new(number_of_bottles).container(number_of_bottles)
   end
 
   def pronoun(number_of_bottles)
-    if number_of_bottles > 1
-      "one"
-    else
-      "it"
-    end
+    BottleNumber.new(number_of_bottles).pronoun(number_of_bottles)
   end
 end
 
