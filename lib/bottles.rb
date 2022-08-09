@@ -25,23 +25,23 @@ class Bottles
   end
 
   def action(number_of_bottles)
-    BottleNumber.new(number_of_bottles).action(number_of_bottles)
+    BottleNumber.new(number_of_bottles).action
   end
 
   def successor(number_of_bottles)
-    BottleNumber.new(number_of_bottles).successor(number_of_bottles)
+    BottleNumber.new(number_of_bottles).successor
   end
 
   def quantity(number_of_bottles)
-    BottleNumber.new(number_of_bottles).quantity(number_of_bottles)
+    BottleNumber.new(number_of_bottles).quantity
   end
 
   def container(number_of_bottles)
-    BottleNumber.new(number_of_bottles).container(number_of_bottles)
+    BottleNumber.new(number_of_bottles).container
   end
 
   def pronoun(number_of_bottles)
-    BottleNumber.new(number_of_bottles).pronoun(number_of_bottles)
+    BottleNumber.new(number_of_bottles).pronoun
   end
 end
 
