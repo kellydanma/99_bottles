@@ -41,12 +41,13 @@ class Bottles
   end
 
   def quantity(number_of_bottles)
-    quantity = BottleNumber.new(number_of_bottles).quantity
-    # if number_of_bottles > 0
-    #   number_of_bottles.to_s
-    # else
-    #   "no more"
-    # end
+    if number_of_bottles > 0
+      number_of_bottles.to_s
+    else
+      "no more"
+    end
+
+    BottleNumber.new(number_of_bottles).quantity(number_of_bottles)
   end
 
   def container(number_of_bottles)
@@ -89,9 +90,9 @@ class BottleNumber
     end
   end
 
-  def quantity
-    if number > 0
-      number.to_s
+  def quantity(number_of_bottles)
+    if number_of_bottles > 0
+      number_of_bottles.to_s
     else
       "no more"
     end
