@@ -52,7 +52,7 @@ class BottleNumber
     @number = number
   end
 
-  def action(number_of_bottles = nil)
+  def action
     if number == 0
       "Go to the store and buy some more, "
     else
@@ -60,7 +60,7 @@ class BottleNumber
     end
   end
 
-  def successor(number_of_bottles = nil)
+  def successor
     if number == 0
       99
     else
@@ -68,7 +68,7 @@ class BottleNumber
     end
   end
 
-  def quantity(number_of_bottles = nil)
+  def quantity
     if number == 0
       "no more"
     else
@@ -76,7 +76,7 @@ class BottleNumber
     end
   end
 
-  def container(number_of_bottles = nil)
+  def container
     if number == 1
       "bottle"
     else
@@ -84,7 +84,7 @@ class BottleNumber
     end
   end
 
-  def pronoun(number_of_bottles = nil)
+  def pronoun
     if number == 1
       "it"
     else
