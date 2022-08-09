@@ -41,8 +41,57 @@ class Bottles
   end
 
   def quantity(number_of_bottles)
-    if number_of_bottles > 0
-      number_of_bottles.to_s
+    quantity = BottleNumber.new(number_of_bottles).quantity
+    # if number_of_bottles > 0
+    #   number_of_bottles.to_s
+    # else
+    #   "no more"
+    # end
+  end
+
+  def container(number_of_bottles)
+    if number_of_bottles == 1
+      "bottle"
+    else
+      "bottles"
+    end
+  end
+
+  def pronoun(number_of_bottles)
+    if number_of_bottles > 1
+      "one"
+    else
+      "it"
+    end
+  end
+end
+
+class BottleNumber
+  attr_reader :number
+
+  def initialize(number)
+    @number = number
+  end
+
+  def action(number_of_bottles)
+    if number_of_bottles == 0
+      "Go to the store and buy some more, "
+    else
+      "Take #{pronoun(number_of_bottles)} down and pass it around, "
+    end
+  end
+
+  def successor(number_of_bottles)
+    if number_of_bottles == 0
+      99
+    else
+      number_of_bottles - 1
+    end
+  end
+
+  def quantity
+    if number > 0
+      number.to_s
     else
       "no more"
     end
