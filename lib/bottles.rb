@@ -17,10 +17,11 @@ class Bottles
   def verse(verse_number)
     number_of_bottles = verse_number
     next_number_of_bottles = successor(number_of_bottles)
+    bottle_number = BottleNumber.new(number_of_bottles)
 
-    "#{quantity(number_of_bottles).capitalize} #{container(number_of_bottles)} of beer on the wall, " +
-    "#{quantity(number_of_bottles)} #{container(number_of_bottles)} of beer.\n" +
-    action(number_of_bottles) +
+    "#{bottle_number.quantity.capitalize} #{bottle_number.container} of beer on the wall, " +
+    "#{bottle_number.quantity} #{bottle_number.container} of beer.\n" +
+    bottle_number.action +
     "#{quantity(next_number_of_bottles)} #{container(next_number_of_bottles)} of beer on the wall.\n"
   end
 
