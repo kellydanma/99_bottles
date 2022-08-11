@@ -17,7 +17,7 @@ class Bottles
   def verse(verse_number)
     bottle_number = BottleNumber.for(verse_number)
 
-    "#{(bottle_number)}".capitalize + " of beer on the wall, " +
+    "#{bottle_number}".capitalize + " of beer on the wall, " +
     "#{bottle_number} of beer.\n" +
     "#{bottle_number.action}, " + 
     "#{bottle_number.successor} of beer on the wall.\n"
