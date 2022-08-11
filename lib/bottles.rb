@@ -20,7 +20,8 @@ class Bottles
 
     "#{(bottle_number)}".capitalize + " of beer on the wall, " +
     "#{bottle_number} of beer.\n" +
-    "#{bottle_number.action} #{next_bottle_number} of beer on the wall.\n"
+    "#{bottle_number.action}, " + 
+    "#{next_bottle_number} of beer on the wall.\n"
   end
 end
 
@@ -37,9 +38,9 @@ class BottleNumber
 
   def action
     if number == 0
-      "Go to the store and buy some more,"
+      "Go to the store and buy some more"
     else
-      "Take #{pronoun} down and pass it around,"
+      "Take #{pronoun} down and pass it around"
     end
   end
 
