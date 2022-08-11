@@ -25,8 +25,11 @@ class Bottles
   end
 
   def bottle_number_for(verse_number)
-    if verse_number == 0
+    case verse_number
+    when 0
       BottleNumber0
+    when 1
+      BottleNumber1
     else
       BottleNumber
     end.new(verse_number)
@@ -84,5 +87,15 @@ class BottleNumber0 < BottleNumber
 
   def successor
     99
+  end
+end
+
+class BottleNumber1 < BottleNumber
+  def container
+    "bottle"
+  end
+
+  def pronoun
+    "it"
   end
 end
