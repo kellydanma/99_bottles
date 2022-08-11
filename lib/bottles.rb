@@ -15,13 +15,21 @@ class Bottles
   end
 
   def verse(verse_number)
-    bottle_number = BottleNumber.new(verse_number)
-    next_bottle_number = BottleNumber.new(bottle_number.successor)
+    bottle_number = bottle_number_for(verse_number)
+    next_bottle_number = bottle_number_for(bottle_number.successor)
 
     "#{(bottle_number)}".capitalize + " of beer on the wall, " +
     "#{bottle_number} of beer.\n" +
     "#{bottle_number.action}, " + 
     "#{next_bottle_number} of beer on the wall.\n"
+  end
+
+  def bottle_number_for(verse_number)
+    if verse_number == 0
+      BottleNumber0.new(0)
+    else
+      BottleNumber.new(verse_number)
+    end
   end
 end
 
