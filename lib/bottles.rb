@@ -26,10 +26,10 @@ class Bottles
 
   def bottle_number_for(verse_number)
     if verse_number == 0
-      BottleNumber0.new(0)
+      BottleNumber0
     else
-      BottleNumber.new(verse_number)
-    end
+      BottleNumber
+    end.new(verse_number)
   end
 end
 
